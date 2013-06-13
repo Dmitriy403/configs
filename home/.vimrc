@@ -4,7 +4,7 @@ set expandtab
 set number
 autocmd BufRead *.h,*.c,*.cpp set cindent
 "remove trailing spaces:
-autocmd BufWritePre *.h,*.c,*.cpp :%s/\s\+$//e
+autocmd BufWritePre *.h,*.c,*.cpp,*.py :%s/\s\+$//e
 
 "Nerd Tree
 nmap <silent> <c-n> :NERDTreeToggle<CR>
