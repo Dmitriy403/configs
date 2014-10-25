@@ -24,6 +24,7 @@ set visualbell
 set t_vb=
 "
 set nocompatible
+set tags=./tags;
 
 filetype plugin on
 if has("autocmd")
