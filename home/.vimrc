@@ -40,7 +40,7 @@ endif
 autocmd BufRead,BufNewFile *.h,*.c,*.hpp,*.cpp set filetype=c
 autocmd BufRead,BufNewFile *.h,*.hpp,*.cpp set filetype=cpp
 "remove trailing spaces:
-autocmd BufWritePre *.h,*.c,*.hpp,*.cpp,*.py :%s/\s\+$//e
+"autocmd BufWritePre *.h,*.c,*.hpp,*.cpp,*.py :%s/\s\+$//e
 
 "UltiSnips
 let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
@@ -70,6 +70,7 @@ nmap <silent> <c-n> :NERDTreeToggle<CR>
 nmap <c-\> :TagbarToggle<CR>
 nmap <c-x> :FSHere<CR>
 nmap <Leader>se :UltiSnipsEdit<CR>
+nmap <F2> :%s/\s\+$//e<CR>
 
 "VUNDLE
 set nocompatible
