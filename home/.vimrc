@@ -41,6 +41,8 @@ autocmd BufRead,BufNewFile *.h,*.c,*.hpp,*.cpp set filetype=c
 autocmd BufRead,BufNewFile *.h,*.hpp,*.cpp set filetype=cpp
 "remove trailing spaces:
 "autocmd BufWritePre *.h,*.c,*.hpp,*.cpp,*.py :%s/\s\+$//e
+"highlight tabs and trailing spaces:
+set list listchars=tab:»·,trail:·
 
 "UltiSnips
 let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
@@ -65,9 +67,14 @@ endif
 
 
 "MAPPINGS
+"tabs
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
 "Nerd Tree
 nmap <silent> <c-n> :NERDTreeToggle<CR>
-nmap <c-\> :TagbarToggle<CR>
+nmap <c-m> :TagbarToggle<CR>
 nmap <c-x> :FSHere<CR>
 nmap <Leader>se :UltiSnipsEdit<CR>
 nmap <F2> :%s/\s\+$//e<CR>
