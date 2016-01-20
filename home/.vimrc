@@ -22,6 +22,8 @@ set cursorline
 "отключаем бибикалку
 set visualbell
 set t_vb=
+"disable background color erase for fix tmux 
+set t_ut=
 "
 set nocompatible
 set tags=./tags;
