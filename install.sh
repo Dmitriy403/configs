@@ -1,8 +1,12 @@
-git submodule update --init --recursive
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-cp .bashrc ~/.bashrc
-cp .bash_profile ~/
+if ! grep -q "403scriptMagic" ~/.bashrc; then
+    sudo cat .bashrc.patch >>  ~/.bashrc
+    echo "bashrc patched"
+fi
+
 cp ./home/.vimrc ~/.vimrc
 cp ./home/.tmux.conf ~/.tmux.conf
-cp -r ./home/.vim ~/
-vim +BundleInstall +qall
+
+if [ -d ~/.vim/ ]; then
+    [ -d ~/.vim/colors/ ] || mkdir ~/.vim/colors/
+    cp ./wombat256mod.vim ~/.vim/colors/
+fi

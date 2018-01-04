@@ -46,13 +46,6 @@ autocmd BufRead,BufNewFile *.h,*.hpp,*.cpp set filetype=cpp
 "highlight tabs and trailing spaces:
 set list listchars=tab:»·,trail:·
 
-"UltiSnips
-let g:UltiSnipsSnippetDirectories=["MyUltiSnips"]
-let g:UltiSnipsEditSplit = "vertical"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 "fswitch
 augroup fswitch-autocommands
     au BufEnter *.cpp let b:fswitchdst  = 'h,hpp'
@@ -70,37 +63,21 @@ endif
 
 "MAPPINGS
 "tabs
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
+nnoremap gk  :tabnext<CR>
+nnoremap gj  :tabprev<CR>
 nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 "Nerd Tree
 nmap <silent> <c-n> :NERDTreeToggle<CR>
 nmap <c-m> :TagbarToggle<CR>
 nmap <c-x> :FSHere<CR>
-nmap <Leader>se :UltiSnipsEdit<CR>
 nmap <F2> :%s/\s\+$//e<CR>
-
-"VUNDLE
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-
-call vundle#rc()
 
 filetype plugin indent on
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Colour-Sampler-Pack'
 if &t_Co==256
-    colorscheme wombat256
+    colorscheme wombat256mod
 else
     colorscheme desert
 endif
-Bundle 'SirVer/ultisnips'
-Bundle 'majutsushi/tagbar'
-Bundle 'derekwyatt/vim-fswitch'
 
