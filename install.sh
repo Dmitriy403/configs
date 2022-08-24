@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 #force exit if anything goes wrong
 set -e
 
@@ -18,10 +19,12 @@ brew install nvim
 # brew uninstall ctags
 # install good tags:
 brew install universal-ctags
-if [ "$machine" == "Linux" ]; then
+
+if [[ ${machine} = "Linux" ]]
+then
     sudo apt install --yes -- python3-venv
 else
-    if ["$machine" != "Mac"]; then
+    if [[ "$machine" != "Mac" ]] ; then
        echo "Unexpected OS type"
        exit 1
     fi
