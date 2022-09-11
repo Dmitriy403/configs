@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 #force exit if anything goes wrong
 set -e
 
@@ -37,8 +37,11 @@ fi
 #fi
 
 cp ./home/.vimrc ~/.vimrc
+mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/colors
+cp ./home/.vimrc ~/.config/nvim/init.vim
 cp ./home/.tmux.conf ~/.tmux.conf
-
+cp wombat256mod.vim ~/.config/nvim/colors/
 
 #install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
