@@ -46,4 +46,7 @@ cp wombat256mod.vim ~/.config/nvim/colors/
 #install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+#install plugins in nvim
+nvim -c 'PlugInstall' \
+     -c 'qa!'
 #curl -fsSL https://deno.land/x/install/install.sh | sh
