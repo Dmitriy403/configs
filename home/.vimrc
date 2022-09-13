@@ -84,6 +84,8 @@ endif
 "PLUGINS
 call plug#begin()
 
+Plug 'https://github.com/tpope/vim-fugitive'
+
 " main one
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 " 9000+ Snippets
