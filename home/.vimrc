@@ -107,3 +107,9 @@ call plug#end()
 
 let g:coq_settings = { 'auto_start': 'shut-up' }
 "let g:coq_settings = { 'display.pum.fast_close': v:false }
+lua << EOF
+local lsp = require "lspconfig"
+local coq = require "coq" -- add this
+
+lsp.clangd.setup(coq.lsp_ensure_capabilities()) -- after
+EOF

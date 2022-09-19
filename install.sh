@@ -23,12 +23,15 @@ brew install universal-ctags
 if [[ ${machine} = "Linux" ]]
 then
     sudo apt install --yes -- python3-venv
+    sudo apt install --yes -- clangd
 else
     if [[ "$machine" != "Mac" ]] ; then
        echo "Unexpected OS type"
        exit 1
     fi
     pip3 install virtualenv
+    # install llvm for clangd
+    brew install llvm
 fi
 
 #if ! grep -q "403scriptMagic" ~/.bashrc; then
