@@ -87,29 +87,29 @@ call plug#begin()
 Plug 'https://github.com/tpope/vim-fugitive'
 
 " main one
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+"Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 " 9000+ Snippets
 "Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
 " Need to **configure separately**
 
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+"Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 " - shell repl
 " - nvim lua api
 " - scientific calculator
 " - comment banner
 " - etc
 
-Plug 'https://github.com/neovim/nvim-lspconfig'
+"Plug 'https://github.com/neovim/nvim-lspconfig'
 
 call plug#end()
 
-let g:coq_settings = { 'auto_start': 'shut-up' }
+"let g:coq_settings = { 'auto_start': 'shut-up' }
 "let g:coq_settings = { 'display.pum.fast_close': v:false }
-lua << EOF
-local lsp = require "lspconfig"
-local coq = require "coq" -- add this
+"lua << EOF
+"local lsp = require "lspconfig"
+"local coq = require "coq" -- add this
 
-lsp.clangd.setup(coq.lsp_ensure_capabilities()) -- after
-EOF
+"lsp.clangd.setup(coq.lsp_ensure_capabilities()) -- after
+"EOF
